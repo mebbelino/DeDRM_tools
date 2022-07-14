@@ -21,7 +21,7 @@ iswindows = sys.platform.startswith('win')
 isosx = sys.platform.startswith('darwin')
 
 def print_removedrm_help():
-    from __init__ import PLUGIN_NAME, PLUGIN_VERSION
+    from __version import PLUGIN_NAME, PLUGIN_VERSION
     print(PLUGIN_NAME + " v" + PLUGIN_VERSION + " - Calibre DRM removal plugin by noDRM")
     print()
     print("remove_drm: Remove DRM from one or multiple files")
