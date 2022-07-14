@@ -6,8 +6,7 @@ being closed.
 """
 import tempfile, os, atexit
 
-from constants import (filesystem_encoding,
-        iswindows, ismacos)
+from standalone.calibre.constants import (filesystem_encoding, iswindows, ismacos)
 
 
 def cleanup(path):
