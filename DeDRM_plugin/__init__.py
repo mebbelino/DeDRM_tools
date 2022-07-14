@@ -119,8 +119,10 @@ try:
     from calibre.customize import FileTypePlugin
 except: 
     # Allow import without Calibre.
+    from standalone.calibre.ptempfile import PersistentTemporaryFile
     class FileTypePlugin:
-        pass
+        def temporary_file(self, suffix):
+            return PersistentTemporaryFile(suffix)
 
 try:
     from calibre.constants import iswindows, isosx
