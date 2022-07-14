@@ -6,6 +6,9 @@ from __future__ import absolute_import, print_function
 
 # Copyright © 2021 NoDRM
 
+# NOTE: Apparently we need to import __init__ before any variables get declared, otherwise python gets confused about the files
+import __init__
+
 OPT_SHORT_TO_LONG = [
     ["c", "config"],
     ["e", "extract"],
@@ -185,9 +188,18 @@ def execute_action(action, filenames, params):
         print("Command '"+action+"' is unknown.", file=sys.stderr)
 
 
+def init():
+    global de_drm
+    de_drm = __init__.DeDRM()
+
+    de_drm.initialize()
+
+
 def main(argv):
     arguments = argv
     skip_opts = False
+
+    init()
 
     # First element is always the ZIP name, remove that.
     if not arguments[0].lower().endswith(".zip") and not "calibre" in sys.modules:
