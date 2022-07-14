@@ -7,3 +7,8 @@
 # Cache
 /DeDRM_plugin/__pycache__
 /DeDRM_plugin/standalone/__pycache__
+
+# Non-important project and development files
+run.sh
+.idea
+/tmp-output
